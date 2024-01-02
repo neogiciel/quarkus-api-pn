@@ -18,18 +18,31 @@ import com.neogiciel.service.PersonneService;
 import com.neogiciel.model.Personne;
 
 
-@Path("/api")
+@Path("/")
 public class ApiController {
 
-     @Inject
+    
+    //Metriques
+    @Inject
     MeterRegistry registry;
 
+    //Peronnse
     PersonneService personneService = new PersonneService();
 
-    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/liste")
+    @Path("/api")
+    public String api() {
+        
+        JSONObject obj = new JSONObject();
+        obj.put("api", "api quarkus");
+        return obj.toString();
+    }
+
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/api/liste")
     public String liste() {
 
         //Trace
@@ -41,7 +54,7 @@ public class ApiController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/get/{id}")
+    @Path("/api/get/{id}")
     public String get(int id) {
         //Trace
         registry.counter("api liste", Tags.of("name", "get")).increment();
@@ -51,7 +64,7 @@ public class ApiController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/add")
+    @Path("/api/add")
     public String add() {
         
         personneService.add(new Personne("toto","toto","16"));
