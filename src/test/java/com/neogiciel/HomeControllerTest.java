@@ -16,7 +16,7 @@ class HomeControllerTest {
           .when().get("/test")
           .then()
              .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+             .body(is("Test from RESTEasy Reactive"));
     }
 
 }
