@@ -10,4 +10,3 @@ spec:
       port: 8084 # The port that the service is running on in the cluster
       targetPort: 8084 # The port exposed by the service
   type: NodePort # type of the service.
-
