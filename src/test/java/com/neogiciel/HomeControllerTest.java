@@ -11,7 +11,7 @@ class HomeControllerTest {
     @Test
     void testHelloEndpoint() {
         given()
-          .when().get("/hello")
+          .when().get("/test")
           .then()
              .statusCode(200)
              .body(is("Hello from RESTEasy Reactive"));
