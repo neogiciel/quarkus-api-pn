@@ -8,6 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/test")
 public class HomeController {
 
+    //Test
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String test() {
