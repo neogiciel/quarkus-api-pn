@@ -11,7 +11,7 @@ class HomeControllerTest {
 
     //Test 
     @Test
-    void testHelloEndpoint() {
+    void testTestEndpoint() {
         given()
           .when().get("/test")
           .then()

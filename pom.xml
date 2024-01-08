@@ -36,6 +36,16 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-reactive</artifactId>
     </dependency>
+    <!--mysql-->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm-panache</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-mysql</artifactId>
+    </dependency>
+    <!--metrics -->
     <dependency>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
@@ -50,8 +60,6 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-  
-  
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
