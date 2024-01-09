@@ -4,13 +4,13 @@ resources:
   source:
     uri: https://github.com/neogiciel/quarkus-api-pn.git
 
-- name: docker-quarkus-api-pn-jvm
-  type: docker-image
-  source:
-      repository: neogicel/quarkus-api-pn-jvm
-      tag: '2.6'
-      username: neogicel
-      password: Patrice88$
+#- name: docker-quarkus-api-pn-jvm
+#  type: docker-image
+#  source:
+#      repository: neogicel/quarkus-api-pn-jvm
+#      tag: '2.6'
+#      username: neogicel
+#      password: Patrice88$
 
 jobs:
 - name : package
@@ -34,4 +34,4 @@ jobs:
       run:
         path: /bin/bash
         args: 
-          - quarkus-api-pn/test-script.sh:
+          - quarkus-api-pn/ci/mvn-script.sh
