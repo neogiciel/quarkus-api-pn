@@ -1,8 +1,11 @@
+echo "--------------------- mvn-script.sh--------------------"
+
 ROOT=$(pwd)
 echo "starting test-script from directory: $ROOT"
 
-#cd _ROOT/AppDemo
+echo "--------------------- package --------------------"
 mvn -f quarkus-api-pn/pom.xml clean package
 
 #docker
-docker build -f quarkus-api-pn/src/main/docker/Dockerfile.jvm -t neogicel/quarkus-api-pn-jvm:1.0 .
+echo "--------------------- cp --------------------"
+cp quarkus-api-pn/target/quarkus-api-pn-1.0.0-SNAPSHOT.jar  mvn-output
