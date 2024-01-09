@@ -35,3 +35,5 @@ jobs:
         path: /bin/bash
         args: 
           - quarkus-api-pn/ci/mvn-script.sh
+      caches:
+        - path: .m2
