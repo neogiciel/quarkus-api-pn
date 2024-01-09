@@ -19,25 +19,6 @@ jobs:
   plan:
   - get: quarkus-api-pn
     trigger: true
-  - task: mvn-package
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source:
-          repository: maven
-          tag: 3.9.2-eclipse-temurin-20-alpine
-      inputs:
-        - name: quarkus-api-pn
-      outputs:
-        - name: mvn-output
-      run:
-        path: /bin/bash
-        args: 
-          - quarkus-api-pn/ci/mvn-script.sh
-      caches:
-        - path: .m2
-  
   - task: build-images
     config:
       platform: linux
@@ -49,8 +30,8 @@ jobs:
   #       repository: rbekker87/build-tools
           #repository: amidos/dcind
           repository: karlkfi/concourse-dcind
-      inputs:
-      - name: mvn-output
+  #    inputs:
+  #    - name: mvn-output
       outputs:
       - name: workspace
       run:
@@ -59,8 +40,14 @@ jobs:
           - bash
           - -ceux
           - |
-            cd mvn-output
             docker build .
+
+#              - -exc
+#              - |
+#                source /docker-lib.sh
+#                chmod 777 /sys/fs/cgroup
+#                start_docker
+#                docker images
                 
 #        args:
 #        - -c
