@@ -47,14 +47,17 @@ jobs:
       - name: mvn-output
       outputs:
       - name: image
-      params:
-        CONTEXT: mvn-output/
+      #params:
+      #  CONTEXT: mvn-output/
       run: # binary used to build the image
         path: build
+        #args: -f src/main/docker/Dockerfile.jvm -t neogicel/quarkus-api-pn-jvm:1.0 .
   - put: docker-quarkus-api-pn-jvm
     params:
-      image: neogicel/quarkus-api-pn-jvm:1.0 
-                
+      image: neogicel/quarkus-api-pn-jvm:4.0 
+
+        #docker build -f src/main/docker/Dockerfile.jvm -t neogicel/quarkus-api-pn-jvm:1.0 .
+
 #        args:
 #        - -c
 #        - |
