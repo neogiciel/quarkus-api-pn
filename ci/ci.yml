@@ -72,4 +72,4 @@ jobs:
         params:
           status_check_timeout: 60
           command_timeout: 30
-          file: "git-java/ci/all.yaml"
+          file: "git-java/ci/kube.yml"
