@@ -1,3 +1,4 @@
+#FROM registry.access.redhat.com/ubi8/openjdk-17:1.18
 FROM openjdk:17
 ENV LANGUAGE='en_US:en'
 
@@ -9,3 +10,4 @@ COPY --chown=185 target/quarkus-app/quarkus/ /deployments/quarkus/
 
 EXPOSE 8084
 CMD ["java", "-jar", "/deployments/quarkus-run.jar"]
+
