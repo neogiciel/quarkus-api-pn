@@ -7,12 +7,12 @@ resource_types:
 
 
 resources:
-- name: quarkus-api-pn
+- name: git-java
   type: git
   source:
     uri: https://github.com/neogiciel/quarkus-api-pn.git
 
-- name: docker-quarkus-api-pn-jvm
+- name: docker-image-java
   type: docker-image
   source:
       repository: neogicel/quarkus-api-pn-jvm
@@ -34,8 +34,9 @@ jobs:
   public: true
   serial: true
   plan:
-  - get: quarkus-api-pn
+  - get: git-java
     trigger: true
+    
   - task: mvn-package
     config:
       platform: linux
@@ -45,20 +46,20 @@ jobs:
           repository: maven
           tag: 3.9.2-eclipse-temurin-20-alpine
       inputs:
-        - name: quarkus-api-pn
+        - name: git-java
       run:
         path: "mvn"
         args:
           - -f
-          - quarkus-api-pn/pom.xml
+          - git-java/pom.xml
           - clean
           - package
       outputs:
-      - name: quarkus-api-pn-out
-        path: quarkus-api-pn
-  - put: docker-quarkus-api-pn-jvm
+      - name: build-java
+        path: git-java
+  - put: docker-image-java
     params:
-        build: quarkus-api-pn-out
+        build: build-java
 
 #- name: deploy
 #  public: true
@@ -67,7 +68,7 @@ jobs:
 #      - get: hello-world-spring
 #        trigger: true
 #        passed: [package]
-#
+
 #      - put: k8s-cluster
 #        params:
 #          status_check_timeout: 60
