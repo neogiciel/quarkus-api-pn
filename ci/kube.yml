@@ -6,7 +6,13 @@ spec:
   selector:
     matchLabels:
       app: quarkus-api-pn-k8s
-  replicas: 1 # Number of replicas that will be created for this deployment
+  replicas: 3
+  minReadySeconds: 20
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+     maxUnavailable: 25%
+     maxSurge: 1
   template:
     metadata:
       labels:
@@ -16,7 +22,7 @@ spec:
         - name: quarkus-api-pn-k8s
           image: neogicel/quarkus-api-pn-jvm:4.4
 # Image that will be used to containers in the cluster
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8084 
 
