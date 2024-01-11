@@ -7,12 +7,12 @@ spec:
     matchLabels:
       app: quarkus-api-pn-k8s
   replicas: 3
-  minReadySeconds: 20
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-     maxUnavailable: 25%
-     maxSurge: 1
+#  minReadySeconds: 20
+#  strategy:
+#    type: RollingUpdate
+#    rollingUpdate:
+#     maxUnavailable: 25%
+#     maxSurge: 1
   template:
     metadata:
       labels:
