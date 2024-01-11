@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: quarkus-api-pn-k8s
-          image: neogicel/quarkus-api-pn-jvm:4.4
+          image: neogicel/quarkus-api-pn-jvm:4.8
 # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
