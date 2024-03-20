@@ -1,8 +1,13 @@
 ## <h1>Application Quarkus MySQL</h1>
 ***
-<img src="https://th.bing.com/th/id/OIP.pWQN5n8eqyY2qMH7tlAabQHaEP?rs=1&pid=ImgDetMain" alt="drawing" height="240px"/>
 
-<img src="https://blog.desdelinux.net/wp-content/uploads/2023/07/MySQL.jpg" alt="drawing" height="240px"/>
+<table><tr>
+  <td><img src="https://th.bing.com/th/id/OIP.pWQN5n8eqyY2qMH7tlAabQHaEP?rs=1&pid=ImgDetMain" alt="drawing" height="240px"/></td>
+  <td><img src="https://blog.desdelinux.net/wp-content/uploads/2023/07/MySQL.jpg" alt="drawing" height="240px"/></td>
+</tr></table>
+
+
+
 
 
 
