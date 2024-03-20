@@ -1,15 +1,9 @@
 ## <h1>Application Quarkus MySQL</h1>
 ***
-
 <table><tr>
   <td><img src="https://th.bing.com/th/id/OIP.pWQN5n8eqyY2qMH7tlAabQHaEP?rs=1&pid=ImgDetMain" alt="drawing" height="240px"/></td>
   <td><img src="https://blog.desdelinux.net/wp-content/uploads/2023/07/MySQL.jpg" alt="drawing" height="240px"/></td>
 </tr></table>
-
-
-
-
-
 
 ## Informations Générales
 ***
@@ -40,5 +34,36 @@ Ce choix délibéré de ne pas eclater les différents appels dans différentes 
 
 Cette solution est un véritable atout en terme d ajout, de modification, d'optimisation des requêtes SQL. 
 Sachant que dans un micro service les base de données sont souvent éclatés et le nombre de table assez réduite.
+
+```
+public interface BddManager {
+    
+     /*
+     * Table Personne
+     */
+    public List<Personne> getListPersonnes();
+    public List<Personne> getListPersonnesSQL();
+    public Long addPersonne(Personne personne);
+    public Personne getPersonneFromId(int Id);
+    public void deletePersonne(int id);
+	  public void updatePersonne(Personne personne);
+	
+    /*
+     * Table Service
+     */
+    public List<Service> getListServices();
+    public Service getServiceFromId(int Id);
+    public Long addService(Service service);
+    public void deleteService(int id);
+    public void updateService(Service service);
+
+    /*
+     * Table Service Persoone
+     */
+    public List<ServicePersonne> getListPersonneFromServices(int id);
+
+}
+```
+
 
 
