@@ -28,6 +28,7 @@ Le service est accessible sur http://localhost:8080
 ## FAQs
 ***
 **Manager d'appel à la Base de données**
+
 L'appel au requetes se fait directement via EntityManager.
 Nous avons centralisé les requêtes dans un Manager qui permets de gérer toutes les table de notre base de données.
 Ce choix délibéré de ne pas eclater les différents appels dans différentes classe s'inspire directement de mon experience s'avere bien plus productif à long terme.
