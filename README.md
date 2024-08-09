@@ -7,7 +7,7 @@
 
 ## Informations Générales
 ***
-Mise en place d'un base de données redis avec sous Quarkus.
+Mise en place d'un base de données MySQL avec sous Quarkus.
 
 ## Technologies
 ***
